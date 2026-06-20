@@ -1,0 +1,20 @@
+{
+  "name": "Custom Workstation Environment",
+  "image": "ghcr.io/voidxela/system:v1-dev",
+  "remoteUser": "user",
+  
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh"
+          }
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "sudo dnf install -y erlang && mise install"
+}
